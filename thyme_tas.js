@@ -118,7 +118,7 @@ exports.send_power = function(cinObj) {
 	var OFF = 2;
 //var container_name = power0;
 	icon = parseInt(con);
-	if ((con > 199)||(con<=10)||(con>19 && con<30)) {
+	if (con > 199) {
 // power0 sub-ctrl에 2생성 (POST 요청)
 		console.log("POWER ON");
 		fetch('http://192.168.0.65:7579/Mobius/ae-test15/power0',{

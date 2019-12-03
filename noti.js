@@ -230,9 +230,8 @@ exports.mqtt_noti_action = function(topic_arr, jsonObj) {
                                 console.log('mqtt response - 2001 ---->');
 
                                 if (path_arr[path_arr.length - 2] === 'cnt-light') {
-                                    //tas.noti(path_arr, cinObj);
-//                                    tas.send_power(cinObj);
-				    //console.log("===========================send_power========================");
+                                    tas.noti(path_arr, cinObj);
+                                    tas.send_power(cinObj);
                                 }
                                 else {
                                     tas.noti(path_arr, cinObj);

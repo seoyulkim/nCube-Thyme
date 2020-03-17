@@ -228,8 +228,9 @@ exports.mqtt_noti_action = function(topic_arr, jsonObj) {
 
                                 console.log('resp_topic ' + resp_topic + ' --------------');
                                 console.log('mqtt response - 2001 ---->');
+                                console.log('cnt-name : ' + path_arr[path_arr.length - 2]);
 
-                                if (path_arr[path_arr.length - 2] === 'cnt-light') {
+                                if (path_arr[path_arr.length - 2] === 'cnt-illuminance') {
                                     tas.noti(path_arr, cinObj);
                                     tas.send_power(cinObj);
                                 }

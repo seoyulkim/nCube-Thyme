@@ -116,38 +116,37 @@ exports.send_power = function(cinObj) {
 	var con = cinObj.con;
 	var ON = 1;
 	var OFF = 2;
-//var container_name = power0;
+
 	icon = parseInt(con);
-	if (con > 199) {
-// power0 sub-ctrl에 2생성 (POST 요청)
+	if (con < 200) {
 		console.log("POWER ON");
-		fetch('http://192.168.0.65:7579/Mobius/ae-test15/power0',{
+		fetch('http://192.168.0.16:7579/Mobius/ae-test15/cnt-power',{
 			headers: {
-                                'Accept': 'application/' + conf.ae.bodytype,
+                'Accept': 'application/' + conf.ae.bodytype,
 				'Content-Type' : 'application/vnd.onem2m-res+json;ty=4',
-                                'Locale': 'ko',
+                'Locale': 'ko',
 				'X-M2M-RI': '12345',
 				'X-M2M-Origin': conf.ae.id,
 			},
 			method : 'post',
-			body : JSON.stringify({"m2m:cin": {"con":OFF}})
+			body : JSON.stringify({"m2m:cin": {"con":ON}})
 		})
 	}
 	else {
 		console.log("POWER OFF");
-		fetch('http://192.168.0.65:7579/Mobius/ae-test15/power0',{
-                        headers: {
-                                'Accept': 'application/' + conf.ae.bodytype,
-                                'Content-Type' : 'application/vnd.onem2m-res+json;ty=4',
-                                'Locale': 'ko',
-                                'X-M2M-RI': '12345',
-                                'X-M2M-Origin': conf.ae.id,
-                        },
-                        method : 'post',
-                        body : JSON.stringify({"m2m:cin": {"con":ON}})
-                })
+		fetch('http://192.168.0.16:7579/Mobius/ae-test15/cnt-power',{
+            headers: {
+                'Accept': 'application/' + conf.ae.bodytype,
+                'Content-Type' : 'application/vnd.onem2m-res+json;ty=4',
+                'Locale': 'ko',
+                'X-M2M-RI': '12345',
+                'X-M2M-Origin': conf.ae.id,
+            },
+            method : 'post',
+            body : JSON.stringify({"m2m:cin": {"con":OFF}})
+        })
 	}
-}
+};
 /*
 exports.send_tweet = function(cinObj) {
     var fs = require('fs');

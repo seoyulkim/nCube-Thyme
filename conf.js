@@ -24,10 +24,10 @@ var acp = {};
 conf.useprotocol = 'http'; // select one for 'http' or 'mqtt' or 'coap' or 'ws'
 
 // build cse
-cse.host        = '192.168.0.65';
+cse.host        = '192.168.0.16';
 cse.port        = '7579';
 cse.name        = 'Mobius';
-cse.id          = '/Mobius2';
+cse.id          = '/Mobius';
 cse.mqttport    = '1883';
 cse.wsport      = '7577';
 
@@ -37,7 +37,7 @@ ae.name         = 'ae-test15';
 ae.id           = 'S' + ae.name;
 
 ae.parent       = '/' + cse.name;
-ae.appid        = 'measure-light';
+ae.appid        = 'measure-illuminance';
 ae.port         = '9727';
 ae.bodytype     = 'json'; // select 'json' or 'xml' or 'cbor'
 ae.tasport      = '3100';
@@ -103,10 +103,10 @@ sub_arr[count++].nu = 'mqtt:' + cse.host + '/' + ae.id + '?ct=9&ct=' + ae.bodyty
 var count = 0;
 cnt_arr[count] = {};
 cnt_arr[count].parent = '/' + cse.name + '/' + ae.name;
-cnt_arr[count++].name = 'cnt-light';
+cnt_arr[count++].name = 'cnt-illuminance';
 cnt_arr[count] = {};
 cnt_arr[count].parent = '/' + cse.name + '/' + ae.name;
-cnt_arr[count++].name = 'power0';
+cnt_arr[count++].name = 'cnt-power';
 cnt_arr[count] = {};
 cnt_arr[count].parent = '/' + cse.name + '/' + ae.name;
 cnt_arr[count++].name = 'timer';

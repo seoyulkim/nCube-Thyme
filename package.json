@@ -12,7 +12,7 @@
     "js2xmlparser": "^3.0.0",
     "morgan": "^1.8.1",
     "mqtt": "^2.9.1",
-    "node-fetch": "^2.6.0",
+    "node-fetch": "^2.6.1",
     "shortid": "^2.2.6",
     "twitter": "^1.7.0",
     "url": "^0.11.0",
